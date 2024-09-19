@@ -7,13 +7,14 @@ import { images } from "../constants";
 import { CustomButton } from "../components/CustomButton";
 import { Loader } from "../components/Loader";
 import { useGlobalContext } from "../context/GlobalProvider";
+const Welcome = () => {
+  const { loading, isLogged } = useGlobalContext();
 
-function Welcome() {
-  const { isLoading, isLoggedIn } = useGlobalContext();
-  if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
+  if (!loading && isLogged) return <Redirect href="/home" />;
+
   return (
     <SafeAreaView className="bg-primary h-full">
-      <Loader isLoading={isLoading} />
+      <Loader isLoading={loading} />
 
       <ScrollView
         contentContainerStyle={{
@@ -62,6 +63,6 @@ function Welcome() {
       <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
-}
+};
 
 export default Welcome;
