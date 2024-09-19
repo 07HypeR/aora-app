@@ -8,7 +8,7 @@ import { CustomButton } from "../components/CustomButton";
 import { Loader } from "../components/Loader";
 import { useGlobalContext } from "../context/GlobalProvider";
 
-const Welcome = () => {
+export function Welcome() {
   const { isLoading, isLoggedIn } = useGlobalContext();
   if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
   return (
@@ -62,6 +62,4 @@ const Welcome = () => {
       <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
-};
-
-export default Welcome;
+}
