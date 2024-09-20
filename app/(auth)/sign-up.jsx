@@ -4,14 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
 
 import { images } from "../../constants";
-import { createUser } from "../../lib/appwrite";
-import { CustomButton } from "../../components/CustomButton";
-import { FormField } from "../../components/FormField";
-import { useGlobalContext } from "../../context/GlobalProvider";
+
+import CustomButton from "../../components/CustomButton";
+import FormField from "../../components/FormField";
 
 const SignUp = () => {
-  const { setUser, setIsLogged } = useGlobalContext();
-
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
@@ -19,24 +16,7 @@ const SignUp = () => {
     password: "",
   });
 
-  const submit = async () => {
-    if (form.username === "" || form.email === "" || form.password === "") {
-      Alert.alert("Error", "Please fill in all fields");
-    }
-
-    setSubmitting(true);
-    try {
-      const result = await createUser(form.email, form.password, form.username);
-      setUser(result);
-      setIsLogged(true);
-
-      router.replace("/home");
-    } catch (error) {
-      Alert.alert("Error", error.message);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const submit = async () => {};
 
   return (
     <SafeAreaView className="bg-primary h-full">

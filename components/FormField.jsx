@@ -3,14 +3,14 @@ import React, { useState } from "react";
 
 import { icons } from "../constants";
 
-const FormField = ({
+export default function FormField({
   title,
   value,
   placeholder,
   handleChangeText,
   otherStyles,
   ...props
-}) => {
+}) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -39,6 +39,4 @@ const FormField = ({
       </View>
     </View>
   );
-};
-
-export default FormField;
+}
