@@ -16,9 +16,7 @@ const SignUp = () => {
     password: "",
   });
 
-  const submit = async () => {
-    setSubmitting(true);
-  };
+  const submit = async () => {};
 
   return (
     <SafeAreaView className="bg-primary h-full">
