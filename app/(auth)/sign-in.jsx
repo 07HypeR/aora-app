@@ -17,14 +17,18 @@ const SignIn = () => {
   });
 
   const submit = async () => {
-    if (!form.email || !form.password) {
+    if (!form.email === "" || !form.password === "") {
       Alert.alert("Please fill in all fields");
-      return;
     }
 
     setIsSubmitting(true);
     try {
       await signIn(form.email, form.password);
+      const result = await getCurrentUser();
+      setUser(result);
+      setIsLogged(true);
+
+      Alert.alert("Success", "User signed in successfully");
 
       router.replace("/home");
     } catch (error) {
