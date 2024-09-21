@@ -6,15 +6,33 @@ import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
 import { images } from "../../constants";
 import CustomButton from "../../components/CustomButton";
 import FormField from "../../components/FormField";
+import { signIn } from "../../lib/appwrite";
 
 const SignIn = () => {
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",
+
     password: "",
   });
 
-  const submit = async () => {};
+  const submit = async () => {
+    if (!form.email || !form.password) {
+      Alert.alert("Please fill in all fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await signIn(form.email, form.password);
+
+      router.replace("/home");
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">

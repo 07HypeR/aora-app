@@ -7,16 +7,33 @@ import { images } from "../../constants";
 
 import CustomButton from "../../components/CustomButton";
 import FormField from "../../components/FormField";
+import { createUser } from "../../lib/appwrite";
 
 const SignUp = () => {
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
     email: "",
     password: "",
   });
 
-  const submit = async () => {};
+  const submit = async () => {
+    if (!form.username || !form.email || !form.password) {
+      Alert.alert("Please fill in all fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const result = await createUser(form.email, form.password, form.username);
+      // set it to global state...
+      router.replace("/home");
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
