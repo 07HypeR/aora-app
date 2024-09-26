@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  RefreshControl,
-  Alert,
-} from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
@@ -20,9 +13,9 @@ import { useLocalSearchParams } from "expo-router";
 
 const Search = () => {
   const { query } = useLocalSearchParams();
-  const { data: posts, refetch } = useAppwrite(searchPosts(query));
+  const { data: posts, refetch } = useAppwrite(() => searchPosts(query));
 
-  const [refreshing, setRefreshing] = useState(false);
+  console.log(query, posts);
 
   useEffect(() => {
     refetch();
