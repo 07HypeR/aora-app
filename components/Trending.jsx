@@ -42,7 +42,7 @@ const TrendingItem = ({ activeItem, item }) => {
       duration={500}>
       {play ? (
         <Video
-          source={{ uri: item.Video }}
+          source={{ uri: item.video }}
           className="w-52 h-72 rounded-[35px] mt-3 bg-white/10"
           resizeMode={ResizeMode.CONTAIN}
           useNativeControls
@@ -55,7 +55,7 @@ const TrendingItem = ({ activeItem, item }) => {
         />
       ) : (
         <TouchableOpacity
-          className="relative justify-center items-center"
+          className="relative flex justify-center items-center"
           activeOpacity={0.7}
           onPress={() => setPlay(true)}>
           <ImageBackground
