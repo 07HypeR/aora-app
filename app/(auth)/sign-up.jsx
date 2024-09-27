@@ -8,8 +8,10 @@ import { images } from "../../constants";
 import CustomButton from "../../components/CustomButton";
 import FormField from "../../components/FormField";
 import { createUser } from "../../lib/appwrite";
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
@@ -26,7 +28,7 @@ const SignUp = () => {
     try {
       const result = await createUser(form.email, form.password, form.username);
       setUser(result);
-      setIsLogged(true);
+      setIsLoggedIn(true);
 
       Alert.alert("Success", "User signed up successfully");
 
