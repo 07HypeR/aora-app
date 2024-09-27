@@ -5,8 +5,8 @@ import SearchInput from "../../components/SearchInput";
 import EmptyState from "../../components/EmptyState";
 import useAppwrite from "../../lib/useAppwrite";
 import VideoCard from "../../components/VideoCard";
-import { getUserPosts, searchPosts } from "../../lib/appwrite";
-import { useLocalSearchParams } from "expo-router";
+import { getUserPosts, searchPosts, signOut } from "../../lib/appwrite";
+import { router, useLocalSearchParams } from "expo-router";
 
 import { useGlobalContext } from "../../context/GlobalProvider";
 import { icons } from "../../constants";
@@ -16,7 +16,13 @@ const Profile = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();
   const { data: posts } = useAppwrite(() => getUserPosts(user.$id));
 
-  const logout = () => {};
+  const logout = async () => {
+    await signOut();
+    setUser(null);
+    setIsLoggedIn(false);
+
+    router.replace("/sign-in");
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
