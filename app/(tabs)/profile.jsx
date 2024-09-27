@@ -10,6 +10,7 @@ import { useLocalSearchParams } from "expo-router";
 
 import { useGlobalContext } from "../../context/GlobalProvider";
 import { icons } from "../../constants";
+import InfoBox from "../../components/InfoBox";
 
 const Profile = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();
@@ -41,6 +42,23 @@ const Profile = () => {
                 className="w-[90%] h-[90%] rounded-lg"
                 resizeMode="cover"
               />
+            </View>
+
+            <InfoBox
+              title={user?.username}
+              containerStyle="mt-5"
+              titleStyle="text-lg"
+            />
+
+            <View className="mt-5 flex-row">
+              <InfoBox
+                title={posts.length || 0}
+                subtitle="Posts"
+                containerStyle="mr-10"
+                titleStyle="text-xl"
+              />
+
+              <InfoBox title="1.2k" subtitle="Followers" titleStyle="text-xl" />
             </View>
           </View>
         )}
