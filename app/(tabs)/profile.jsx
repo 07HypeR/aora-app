@@ -46,7 +46,7 @@ const Profile = () => {
 
             <InfoBox
               title={user?.username}
-              containerStyle="mt-5"
+              containerStyles="mt-5"
               titleStyle="text-lg"
             />
 
@@ -54,7 +54,7 @@ const Profile = () => {
               <InfoBox
                 title={posts.length || 0}
                 subtitle="Posts"
-                containerStyle="mr-10"
+                containerStyles="mr-10"
                 titleStyle="text-xl"
               />
 
