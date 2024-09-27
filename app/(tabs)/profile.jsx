@@ -1,13 +1,11 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SearchInput from "../../components/SearchInput";
 import EmptyState from "../../components/EmptyState";
 import useAppwrite from "../../lib/useAppwrite";
 import VideoCard from "../../components/VideoCard";
-import { getUserPosts, searchPosts, signOut } from "../../lib/appwrite";
-import { router, useLocalSearchParams } from "expo-router";
-
+import { getUserPosts, signOut } from "../../lib/appwrite";
+import { router } from "expo-router";
 import { useGlobalContext } from "../../context/GlobalProvider";
 import { icons } from "../../constants";
 import InfoBox from "../../components/InfoBox";

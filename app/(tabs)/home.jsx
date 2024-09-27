@@ -16,7 +16,6 @@ import { getAllPosts } from "../../lib/appwrite";
 import useAppwrite from "../../lib/useAppwrite";
 import VideoCard from "../../components/VideoCard";
 import { getLatestPosts } from "../../lib/appwrite";
-
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Home = () => {

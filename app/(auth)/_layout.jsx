@@ -3,9 +3,9 @@ import { StatusBar } from "expo-status-bar";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const AuthLayout = () => {
-  const { loading, isLoggedIn } = useGlobalContext();
+  const { isloading, isLoggedIn } = useGlobalContext();
 
-  if (!loading && isLoggedIn) return <Redirect href="/home" />;
+  if (!isloading && isLoggedIn) return <Redirect href="/home" />;
 
   return (
     <>
