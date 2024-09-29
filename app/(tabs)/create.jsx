@@ -50,10 +50,6 @@ const Create = () => {
           video: result.assets[0],
         });
       }
-    } else {
-      setTimeout(() => {
-        Alert.alert("Document picked", JSON.stringify(result, null, 2));
-      }, 100);
     }
   };
 
@@ -92,7 +88,7 @@ const Create = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <ScrollView className="px-4 my-6">
+      <ScrollView className="px-4 -mb-9">
         <Text className="text-2xl text-white font-psemibold">Upload Video</Text>
 
         <FormField
