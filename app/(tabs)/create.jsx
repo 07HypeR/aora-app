@@ -12,10 +12,11 @@ import FormField from "../../components/FormField";
 import { Video, ResizeMode } from "expo-av";
 import { icons } from "../../constants";
 import CustomButton from "../../components/CustomButton";
-import * as DocumentPicker from "expo-document-picker";
+import * as ImagePicker from "expo-image-picker";
 import { router } from "expo-router";
 import { createVideo } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
+import * as DocumentPicker from "expo-document-picker";
 
 const Create = () => {
   const { user } = useGlobalContext();
