@@ -39,7 +39,7 @@ const VideoCard = ({
 
         <View className="pt-2">
           <Image
-            source={icons.menu}
+            source={icons.bookmark}
             className="w-5 h-5 "
             resizeMode="contain"
           />
