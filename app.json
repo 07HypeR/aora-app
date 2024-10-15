@@ -29,9 +29,16 @@
       "favicon": "./assets/images/favicon.png",
       "package": "com.stoic.aora"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router"
+    ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f5a84744-d11e-431b-a07f-0048c0fb426e"
+      }
     }
   }
 }
