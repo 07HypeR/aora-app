@@ -18,6 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
+        "resizeMode": "contain",
         "foregroundImage": "./assets/images/logo-small.png",
         "backgroundColor": "#161622"
       },
