@@ -4,13 +4,11 @@
     "slug": "Aora",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo-small.png",
+    "icon": "./assets/logo.png",
     "scheme": "aora",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#161622"
+      "image": "./assets/splash.png"
     },
     "ios": {
       "supportsTablet": true,
@@ -18,8 +16,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "resizeMode": "contain",
-        "foregroundImage": "./assets/images/logo-small.png",
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#161622"
       },
       "package": "com.stoic.aora"
